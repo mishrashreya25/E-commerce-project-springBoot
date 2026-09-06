@@ -19,6 +19,7 @@
         <h3 style="margin-top: 10px">Sign Up Now</h3>
         <p>Please fill out this to register</p>
         <form action="newuserregister" method="post">
+            <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
             <div class="form-group">
                 <label for="firstName">User Name</label>
                 <input type="text" name="username" id="firstName" required placeholder="Your Username*" required class="form-control form-control-lg">

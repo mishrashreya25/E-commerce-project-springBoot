@@ -47,6 +47,7 @@
 	<div class="jumbotron container border border-info">
 		<h3>Update Existing Product</h3>
 		<form action="/admin/products/update/${product.id}" method="post">
+			<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
 			<div class="row">
 				<div class="col-sm-5">
 					
@@ -90,21 +91,15 @@
 				<div class="col-sm-5">
 				<div class="form-group">
 						<label for="description">Product Description</label>
-						<textarea class="form-control border border-success" rows="4" name="description" placeholder="Product Details" value= "${ pdescription }"></textarea>
+					<textarea class="form-control border border-success" rows="4" name="description" placeholder="Product Details">${product.description}</textarea>
 					</div>
 					<p>Product Image</p>
-					<div class="custom-file">
-						<input type="file" class="custom-file-input" name="productImage" value="${ product.image }" accept="image/jpeg, image/png" id="productImage"  onchange="loadfile(event)"/>
-						<label class="custom-file-label border border-success" for="productImage">Choose file</label>
-						<script type="text/javascript">
-						var loadFile = function(event) {
-							var image = document.getElementById('imgPreview');
-							image.src = URL.createObjectURL(event.target.files[0]);
-						};
-						</script>
+					<div class="form-group">
+						<label for="productImage">Image Link</label>
+						<input type="text" class="form-control border border-success" id="productImage" name="productImage" value="${product.image}" required>
 					</div>
 					<div class="form-group">
-						<img src="#" id="imgPreview" height="100px" width="100px"
+						<img src="${product.image}" id="imgPreview" height="100px" width="100px"
 							style="margin-top: 20px" alt=" ">
 					</div>
 					<input type="hidden" name="imgName">

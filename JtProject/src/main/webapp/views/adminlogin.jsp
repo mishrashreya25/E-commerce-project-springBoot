@@ -50,6 +50,7 @@
     <div class="jumbotron border p-4">
         <h2 class="text-center">Admin Login</h2>
         <form action="/admin/loginvalidate" method="post">
+            <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
             <div class="form-group">
                 <label for="username">Username:</label>
                 <div class="input-group">

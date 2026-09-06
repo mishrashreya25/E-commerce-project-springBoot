@@ -49,6 +49,7 @@
 	<div class="jumbotron container border border-info">
 		<h3>Add a new Product</h3>
 		<form action="/admin/products/add" method="post">
+			<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
 			<div class="row">
 				<div class="col-sm-5">
 					

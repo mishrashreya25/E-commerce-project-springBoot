@@ -2,32 +2,32 @@ package com.jtspringproject.JtSpringProject.services;
 
 import java.util.List;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.jtspringproject.JtSpringProject.dao.categoryDao;
 import com.jtspringproject.JtSpringProject.models.Category;
 
-import net.bytebuddy.dynamic.DynamicType.Builder.InnerTypeDefinition;
-
 @Service
 public class categoryService {
-	@Autowired
-	private categoryDao categoryDao;
-	
+	private final categoryDao categoryDao;
+
+	public categoryService(categoryDao categoryDao) {
+		this.categoryDao = categoryDao;
+	}
+
 	public Category addCategory(String name) {
 		return this.categoryDao.addCategory(name);
 	}
-	
-	public List<Category> getCategories(){
+
+	public List<Category> getCategories() {
 		return this.categoryDao.getCategories();
 	}
-	
+
 	public Boolean deleteCategory(int id) {
 		return this.categoryDao.deletCategory(id);
 	}
-	
-	public Category updateCategory(int id,String name) {
+
+	public Category updateCategory(int id, String name) {
 		return this.categoryDao.updateCategory(id, name);
 	}
 

@@ -1,4 +1,4 @@
-3<!doctype html>
+<!doctype html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
@@ -19,6 +19,7 @@
         <h3 style="margin-top: 10px">User Profile</h3>
         <br>
         <form action="updateuser" method="post">
+            <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
             <div class="form-group">
                 <label for="firstName">User Name</label>
                 <input type="hidden" name="userid" value="${userid }">
@@ -33,7 +34,7 @@
             </div>
             <div class="form-group">
                 <label for="password">Password</label>
-                <input type="password" class="form-control form-control-lg" required placeholder="Password*" value="${password }" required name="password"
+                <input type="password" class="form-control form-control-lg" placeholder="Leave blank to keep existing password" name="password"
                        id="password">
             </div>
             <div class="form-group">
