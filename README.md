@@ -199,10 +199,14 @@ Adjust branch, deployment steps, and credentials for your environment.
 
 ## Roadmap
 
-- Complete cart and checkout domain flow
-- Replace remaining legacy naming conventions with standard Java naming
-- Expand automated test coverage (service + controller integration tests)
-- Add Docker-based local development setup
+See the full roadmap in [roadmap.md](roadmap.md).
+
+Current priorities:
+
+- Solid foundation: CI, Docker Compose, contribution workflow, and test coverage.
+- Complete e-commerce domain: cart, checkout, auth, search, and API docs.
+- Industry patterns: caching, concurrency control, observability, and scalability.
+- Long-term architecture: event-driven patterns and microservice decomposition guide.
 
 ## Demo
 
