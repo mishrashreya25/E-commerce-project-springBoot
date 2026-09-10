@@ -29,7 +29,7 @@ public class AdminController {
 	private final userService userService;
 	private final categoryService categoryService;
 	private final productService productService;
-	private static final String REDIRECT_ADMIN_PRODUCTS="redirect:/admin/products";
+	private static final String REDIRECT_ADMIN_PRODUCTS = "redirect:/admin/products";
 	private static final String REDIRECT_ADMIN_CATEGORIES = "redirect:/admin/categories";
 	private static final String VIEW_CATEGORIES = "categories";
 
